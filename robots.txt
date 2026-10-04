@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jump-around.net/sitemap.xml

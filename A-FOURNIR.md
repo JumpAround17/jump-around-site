@@ -1,0 +1,5 @@
+- Photo et bio de Mr Jean (sax, invité de NOFA)
+- Lien du formulaire d'inscription bénévoles
+- Liens de la playlist (plateformes)
+- Adresse du siège et n° RNA/SIREN (mentions légales)
+- Liens vidéos YouTube (plus tard)
