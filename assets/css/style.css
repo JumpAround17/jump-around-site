@@ -222,3 +222,10 @@ details.acc{border-bottom:1px solid rgba(0,48,24,.2);padding:4px 0}details.acc s
 .lim{background:var(--red);color:var(--gold);border:2px solid var(--green-d)}
 
 .phase .pcd{font-size:.76rem;white-space:nowrap;letter-spacing:0}.phase.next .pcd{font-size:.72rem}@media(max-width:1180px){.phase .pcd{white-space:normal}}
+
+.ha iframe{display:block;transition:height .2s}.ha{min-height:0}
+
+.ha-wrap[hidden]{display:none}.ha-wrap{margin-top:16px}button.btn-ha{cursor:pointer;font-family:inherit}button.btn-ha[aria-expanded="true"]{background:var(--cream)}
+/* pages Mentions légales / Confidentialité : tout en petit */
+.legal{font-size:.8rem;line-height:1.5}.legal h1{font-size:1.15rem;margin-bottom:.6em}.legal h2{font-size:.95rem}.legal p,.legal li{font-size:.8rem;line-height:1.5;margin:.4em 0}
+.legal details.acc{padding:0}.legal details.acc summary{font-size:.85rem;padding:8px 0}.legal .accb{font-size:.78rem}.legal .accb p,.legal .accb li{font-size:.78rem}.legal .eyebrow{font-size:.65rem}

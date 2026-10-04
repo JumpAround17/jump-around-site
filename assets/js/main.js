@@ -39,7 +39,7 @@ tick();setInterval(tick,1000);
   upd();setInterval(upd,1000)})();
 /* HelloAsso : hauteur auto */
 window.addEventListener('message',function(e){if(!e.data||!e.data.height)return;
-  $$('iframe[data-ha]').forEach(function(f){if(f.contentWindow===e.source){var h=parseFloat(e.data.height);if(h>(parseFloat(f.getAttribute('height'))||0))f.setAttribute('height',h)}})});
+  $$('iframe[data-ha]').forEach(function(f){if(f.contentWindow===e.source){var h=Math.ceil(parseFloat(e.data.height));if(h>0&&Math.abs(h-(parseFloat(f.getAttribute('height'))||0))>4){f.setAttribute('height',h);f.style.height=h+'px'}}})});
 /* Carrousels : défilement lent, sans recadrage, pause au toucher et au survol */
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 $$('.car').forEach(function(car){
@@ -97,3 +97,14 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 })();
 
 ;(function(){var b=document.getElementById('mapbtn'),box=document.getElementById('mapbox');if(!b||!box)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.google.com/maps?q=Espace+Mend%C3%A8s+France+Saintes&output=embed&hl=fr';f.title='Carte : Espace Mendès France, Saintes';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';box.innerHTML='';box.appendChild(f)})})();
+
+/* HelloAsso : le widget ne se charge qu’au clic sur le bouton */
+;(function(){document.querySelectorAll('[data-ha-toggle]').forEach(function(b){b.addEventListener('click',function(){
+  var w=document.getElementById(b.getAttribute('data-ha-toggle'));if(!w)return;var open=w.hasAttribute('hidden');
+  if(open){w.removeAttribute('hidden');var f=w.querySelector('iframe[data-src]');if(f&&!f.getAttribute('src')){f.setAttribute('src',f.getAttribute('data-src'))}
+    setTimeout(function(){try{w.scrollIntoView({behavior:'smooth',block:'nearest'})}catch(e){}},150)}
+  else w.setAttribute('hidden','');
+  b.setAttribute('aria-expanded',open?'true':'false')})})})();
+/* Carte : affichage automatique si les cookies ont été acceptés */
+;(function(){var b=document.getElementById('mapbtn');if(!b)return;try{if(localStorage.getItem('ja_consent_v1')==='yes'){b.click()}}catch(e){}
+  var y=document.getElementById('cc-yes');if(y)y.addEventListener('click',function(){setTimeout(function(){var bb=document.getElementById('mapbtn');if(bb)bb.click()},50)})})();
