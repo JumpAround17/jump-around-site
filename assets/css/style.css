@@ -229,3 +229,7 @@ details.acc{border-bottom:1px solid rgba(0,48,24,.2);padding:4px 0}details.acc s
 /* pages Mentions légales / Confidentialité : tout en petit */
 .legal{font-size:.8rem;line-height:1.5}.legal h1{font-size:1.15rem;margin-bottom:.6em}.legal h2{font-size:.95rem}.legal p,.legal li{font-size:.8rem;line-height:1.5;margin:.4em 0}
 .legal details.acc{padding:0}.legal details.acc summary{font-size:.85rem;padding:8px 0}.legal .accb{font-size:.78rem}.legal .accb p,.legal .accb li{font-size:.78rem}.legal .eyebrow{font-size:.65rem}
+@media(max-width:560px){.nums{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:420px;margin-left:auto;margin-right:auto}.num{padding:10%}.num b{font-size:1.45rem}.num span{font-size:.78rem}}
+#totop{position:fixed;right:14px;bottom:16px;z-index:55;width:42px;height:42px;border-radius:50%;border:2px solid var(--green-d);background:rgba(243,227,200,.94);color:var(--green-d);font-size:1.25rem;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 3px 8px rgba(0,30,15,.25);opacity:.85}
+#totop:hover{opacity:1;background:var(--green-d);color:#f3e3c8}
+#totop[hidden]{display:none}

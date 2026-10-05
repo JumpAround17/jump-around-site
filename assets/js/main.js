@@ -108,3 +108,9 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 /* Carte : affichage automatique si les cookies ont été acceptés */
 ;(function(){var b=document.getElementById('mapbtn');if(!b)return;try{if(localStorage.getItem('ja_consent_v1')==='yes'){b.click()}}catch(e){}
   var y=document.getElementById('cc-yes');if(y)y.addEventListener('click',function(){setTimeout(function(){var bb=document.getElementById('mapbtn');if(bb)bb.click()},50)})})();
+;(function(){var b=document.getElementById('totop');if(!b)return;function t(){b.hidden=window.scrollY<700}window.addEventListener('scroll',t,{passive:true});t();b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});var br=document.querySelector('.hd .brand');if(br){br.addEventListener('click',function(e){var h=br.getAttribute('href')||'';if(h.indexOf('index.html')===-1||h.indexOf('#')===-1&&location.pathname.slice(-1)!=='/'&&location.pathname.indexOf('index.html')===-1)return;if(document.getElementById('accueil')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}})}})();
+/* Liens « Billets / Prendre ma place » : ouvrent la billetterie HelloAsso et y amènent */
+;(function(){var w=document.getElementById('haTicketWrap');if(!w)return;var btn=document.querySelector('[data-ha-toggle="haTicketWrap"]');
+document.querySelectorAll('a[href="#billetterie"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();
+if(w.hasAttribute('hidden')){w.removeAttribute('hidden');var f=w.querySelector('iframe[data-src]');if(f&&!f.getAttribute('src')){f.setAttribute('src',f.getAttribute('data-src'))}if(btn)btn.setAttribute('aria-expanded','true')}
+setTimeout(function(){var y=(btn?btn.getBoundingClientRect().top:w.getBoundingClientRect().top)+window.scrollY-90;window.scrollTo({top:y,behavior:'smooth'})},80)})})})();
