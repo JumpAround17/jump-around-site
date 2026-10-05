@@ -233,3 +233,4 @@ details.acc{border-bottom:1px solid rgba(0,48,24,.2);padding:4px 0}details.acc s
 #totop{position:fixed;right:14px;bottom:16px;z-index:55;width:42px;height:42px;border-radius:50%;border:2px solid var(--green-d);background:rgba(243,227,200,.94);color:var(--green-d);font-size:1.25rem;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 3px 8px rgba(0,30,15,.25);opacity:.85}
 #totop:hover{opacity:1;background:var(--green-d);color:#f3e3c8}
 #totop[hidden]{display:none}
+body{overflow-x:clip}

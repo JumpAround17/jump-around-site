@@ -114,3 +114,8 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 document.querySelectorAll('a[href="#billetterie"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();
 if(w.hasAttribute('hidden')){w.removeAttribute('hidden');var f=w.querySelector('iframe[data-src]');if(f&&!f.getAttribute('src')){f.setAttribute('src',f.getAttribute('data-src'))}if(btn)btn.setAttribute('aria-expanded','true')}
 setTimeout(function(){var y=(btn?btn.getBoundingClientRect().top:w.getBoundingClientRect().top)+window.scrollY-90;window.scrollTo({top:y,behavior:'smooth'})},80)})})})();
+/* Arrivée directe sur …/#billetterie (pubs, liens) : ouvre la billetterie */
+;(function(){if(location.hash!=='#billetterie')return;var w=document.getElementById('haTicketWrap');if(!w)return;var btn=document.querySelector('[data-ha-toggle="haTicketWrap"]');
+function go(){if(w.hasAttribute('hidden')){w.removeAttribute('hidden');var f=w.querySelector('iframe[data-src]');if(f&&!f.getAttribute('src'))f.setAttribute('src',f.getAttribute('data-src'));if(btn)btn.setAttribute('aria-expanded','true')}
+var y=(btn?btn.getBoundingClientRect().top:w.getBoundingClientRect().top)+window.scrollY-90;window.scrollTo({top:y})}
+function run(){setTimeout(go,50);setTimeout(go,700)}if(document.readyState==='complete')run();else window.addEventListener('load',run)})();
