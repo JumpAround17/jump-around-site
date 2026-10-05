@@ -234,3 +234,6 @@ details.acc{border-bottom:1px solid rgba(0,48,24,.2);padding:4px 0}details.acc s
 #totop:hover{opacity:1;background:var(--green-d);color:#f3e3c8}
 #totop[hidden]{display:none}
 body{overflow-x:clip}
+.ill{display:block;height:auto;margin:24px auto 0;filter:drop-shadow(0 4px 6px rgba(0,30,15,.22))}
+.ill-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:6px 0 18px}
+@media(max-width:560px){.ill-row .ill{width:120px!important}}
