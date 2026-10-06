@@ -269,3 +269,9 @@ body{overflow-x:clip}
 .pka-dl{font-weight:800;color:var(--green-d)}
 @media(max-width:620px){.pka,.pkas{grid-template-columns:1fr}.pka-pic img{max-width:260px}}
 .pk-vis .pk img{object-fit:contain;background:#E9DCC6}
+.becomep{margin-top:28px;display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:center;padding:22px 24px}
+.becomep h3{margin:.2em 0 .4em}.becomep p{margin:0}
+.becomep-btns{flex-direction:column;align-items:stretch;gap:10px}
+.becomep-btns .btn{text-align:center;justify-content:center}
+#partenaires .becomep .btn-ghost{color:var(--green-d)}
+@media(max-width:760px){.becomep{grid-template-columns:1fr}}
