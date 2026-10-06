@@ -275,3 +275,18 @@ body{overflow-x:clip}
 .becomep-btns .btn{text-align:center;justify-content:center}
 #partenaires .becomep .btn-ghost{color:var(--green-d)}
 @media(max-width:760px){.becomep{grid-template-columns:1fr}}
+.tl .full{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:6px;background:var(--red);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px;transform:rotate(-2deg)}
+/* titres façon visuels : contour blanc épais + ombre douce (comme le titrage) */
+main section:not(.band-green):not(.hero) .wrap>h2,main section:not(.band-green) .wrap>div>h2{color:var(--green);text-transform:uppercase;letter-spacing:.01em;
+text-shadow:0 3px 0 #fff,0 -3px 0 #fff,3px 0 0 #fff,-3px 0 0 #fff,2px 2px 0 #fff,-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,0 5px 0 #fff,4px 4px 0 #fff,-4px 4px 0 #fff,5px 9px 10px rgba(0,48,24,.35)}
+.band-green .wrap>h2,.band-green .wrap>div>h2{text-transform:uppercase;text-shadow:0 3px 0 var(--green-d),0 -3px 0 var(--green-d),3px 0 0 var(--green-d),-3px 0 0 var(--green-d),3px 3px 0 var(--green-d),-3px 3px 0 var(--green-d),5px 8px 0 rgba(196,24,24,.9)}
+/* charte titres v2 : contour blanc épais qui remplit l'intérieur des lettres, comme le titrage */
+main section:not(.hero) .wrap>h2,main section:not(.hero) .wrap>div>h2,.pkit h1,.pkit h2,.legal h1{color:var(--green);text-transform:uppercase;letter-spacing:.03em;text-shadow:none;
+-webkit-text-stroke:.2em #fff;paint-order:stroke fill;filter:drop-shadow(3px 5px 3px rgba(0,48,24,.35));padding-inline:.12em}
+.band-green .wrap>h2,.band-green .wrap>div>h2{color:var(--green);text-shadow:none}
+/* titres v3 : images (même rendu que les visuels) */
+h1.ht,h2.ht{-webkit-text-stroke:0!important;text-shadow:none!important;filter:none!important;padding-inline:0!important;line-height:1}
+.ht img{display:inline-block;max-width:100%;height:auto;vertical-align:middle;margin-left:-.12em}
+.ht>span[style]{vertical-align:middle}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.band-green .ht>span[style]{color:var(--cream)!important}
