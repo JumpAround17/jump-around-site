@@ -290,3 +290,18 @@ h1.ht,h2.ht{-webkit-text-stroke:0!important;text-shadow:none!important;filter:no
 .ht>span[style]{vertical-align:middle}
 .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .band-green .ht>span[style]{color:var(--cream)!important}
+@media(max-width:700px){.pl-wrap{grid-template-columns:1fr!important}.pl-wrap img{max-width:340px;margin:0 auto}}
+/* logos partenaires (v2) */
+.plogos{background:#fff;border-radius:var(--r);padding:clamp(18px,3vw,34px) clamp(12px,3vw,28px);border:3px solid var(--green-d)}
+.pgrp{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:26px 34px;padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid #E6D6BC}
+.pgrp:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.plogo{display:flex;flex-direction:column;align-items:center;text-align:center;color:inherit;text-decoration:none;max-width:280px}
+a.plogo:hover .pcap{text-decoration:underline}
+.ppic{display:flex;align-items:center;justify-content:center;height:150px}
+.pmd .ppic{height:100px}.psm .ppic{height:60px}.plg .ppic{height:130px}
+.plm{display:block;height:100%;max-width:260px;background:var(--green,#006030);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
+.pmd .plm{max-width:200px}.psm .plm{max-width:140px}
+.pcap{margin-top:8px;font-size:.85rem;font-weight:800;color:var(--green-d,#003018);max-width:170px;line-height:1.25}
+.psm .pcap{font-size:.72rem;font-weight:500;color:var(--muted,#5A5A46)}
+.psm{gap:20px 40px}
+@media (max-width:600px){.ppic{height:110px}.pmd .ppic{height:76px}.psm .ppic{height:48px}.psm{gap:16px 22px}}
