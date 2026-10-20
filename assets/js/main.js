@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-var FORM_KEY='82ae3a91-8197-4b8a-acd2-3a38e5ce64b1' /* clé Web3Forms (publique) */, MAIL='assojumparound@gmail.com', PIXEL_ID='652526568710500', METRICOOL_HASH='9c2957ac1501002479c78662da21970a', KEY='ja_consent_v1', PREVIEW=!!window.JA_PREVIEW;
+var FORM_KEY='82ae3a91-8197-4b8a-acd2-3a38e5ce64b1' /* clé Web3Forms (publique) */, MAIL='assojumparound@gmail.com', PIXEL_ID='652526568710500', GA_ID='G-W1C4ML1EH1', METRICOOL_HASH='9c2957ac1501002479c78662da21970a', KEY='ja_consent_v1', PREVIEW=!!window.JA_PREVIEW;
 function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
 function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
 var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
@@ -83,6 +83,8 @@ function loadTrackers(){
   if(loaded||PREVIEW)return;loaded=true;
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq('init',PIXEL_ID);fbq('track','PageView');
+  window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID);
+  var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(g);
   var s=document.createElement('script');s.src='https://tracker.metricool.com/resources/be.js';s.async=true;
   s.onload=function(){try{beTracker.t({hash:METRICOOL_HASH})}catch(e){}};document.head.appendChild(s);
 }
@@ -93,7 +95,9 @@ if(ya)ya.addEventListener('click',function(){set('yes');hide();loadTrackers()});
 if(no)no.addEventListener('click',function(){set('no');hide()});
 $$('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show()})});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');
-  if(!a||get()!=='yes'||typeof fbq!=='function')return;try{fbq('trackCustom',a.getAttribute('data-track'),{source:a.getAttribute('data-src')||'page'})}catch(_){}});
+  if(!a||get()!=='yes')return;var n=a.getAttribute('data-track'),src=a.getAttribute('data-src')||'page';
+  try{if(typeof fbq==='function')fbq('trackCustom',n,{source:src})}catch(_){}
+  try{if(typeof gtag==='function')gtag('event',n,{source:src})}catch(_){}});
 })();
 
 ;(function(){var b=document.getElementById('mapbtn'),box=document.getElementById('mapbox');if(!b||!box)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.google.com/maps?q=Espace+Mend%C3%A8s+France+Saintes&output=embed&hl=fr';f.title='Carte : Espace Mendès France, Saintes';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';box.innerHTML='';box.appendChild(f)})})();
